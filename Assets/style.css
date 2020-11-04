@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* body{
+    
+}
+
+*/
+
+#viewhighscores {
+    text-align: left;
+    float: left;
+    
+}
+
+#timer {
+    text-align: right;
+}
+
+.maincontent {
+    text-align: center;
+    font-weight: bold;
+}
+
+#startbtn {
+    background-color: black;
+    font-weight: bold;
+    color: white; 
+}
