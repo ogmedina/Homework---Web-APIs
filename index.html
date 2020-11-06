@@ -5,31 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BootCamp Quiz</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="./Assets/style.css" />
-    
+    <link rel="stylesheet" href="./Assets/style.css" />    
 </head>
-<body>
-    <header>
-        <div id = "viewhighscores">
-            <h3>View HighScores</h3>
-        </div>
-        <div id = "timer">
-            <h3>Timer: 90</h3>
-        </div>
-    </header>
-    <br>
-    <br>
-    <br>
-    <div class = "container maincontent">
-        <div class = "row">
-            <div class = "col-md-12">
-                <h4>Coding Quiz Challenge</h4>
-                <p>Try to answer the following code-related questions within the time limit.<br>
-                    Keep in mind that incorrect answers will penalize your score/time by ten seconds!!</p>
-                <button class = "btn" id="startbtn">Start Quiz</button>
-            </div>
-        </div>
+<body>    
+<header>
+    <a href = "quizhighscores.html"><div id = "viewhighscores">View High Scores</div></a>
+    <div id = "timer">Timer: 90</div>
+</header>
+<br>
+<br>
+<br>
+<div class = "container">
+    <div class = "row">
+      <div class = "col-md-12" id = "mainContent">
+          <br>                
+          <h4>Coding Quiz Challenge</h4>
+            <p>Try to answer the following code-related questions within the time limit.<br>
+               Keep in mind that incorrect answers will penalize your score/time by ten seconds!!</p>
+           <button class = "btn" id="startbtn">Start Quiz</button>
+           <br>
+           <br>
+      </div>
     </div>
-    <script src="./Assets/script.js"></script>
+</div>
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-12 answerBar"></div>
+    </div>
+</div>   
+<script src="./Assets/script.js"></script>
 </body>
 </html>
