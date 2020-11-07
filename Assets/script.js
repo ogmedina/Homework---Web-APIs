@@ -57,10 +57,10 @@ var questionArr = [
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is: ",
         answers: [
-            "1. JavaScript.",
-            "2. terminal/bash",
-            "3. for loops",
-            "4. console.log()"],
+        "1. JavaScript.",
+        "2. terminal/bash",
+        "3. for loops",
+        "4. console.log()"],
         correctAnswer: 3,
     },
 ];
@@ -124,6 +124,27 @@ function renderQuestion() {
     }
 }
 
+// Function for right answers and the change of HTML, NO subtraction from time
+function rightAnswer(){
+    var correctResponse;
+    answerBarEl.innerHTML = "";
+    correctResponse = document.createElement("div");
+    correctResponse.innerText = "Correct!";
+    correctResponse.setAttribute("class", "answerBar");
+    correctResponse.setAttribute("style", "border-top: lightgray solid 2px");
+    correctResponse.style.backgroundColor = "green";
+    correctResponse.style.color = "black";
+    correctResponse.style.fontWeight = "bold";
+    correctResponse.style.textAlign = "center";
+    answerBarEl.append(correctResponse);
+    setTimeout(function(){
+        correctResponse.innerHTML = "";
+        correctResponse.setAttribute("style", "border-top: none");
+    }, 1000);
+    questionCount++;    
+    renderQuestion();
+}
+
 // Function for wrong answers and the change of HTML and the subtraction of time
 function wrongAnswer(){
     var wrongResponse;
@@ -146,27 +167,6 @@ function wrongAnswer(){
     renderQuestion();    
 }
 
-// Function for right answers and the change of HTML, NO subtraction from time
-function rightAnswer(){
-    var correctResponse;
-    answerBarEl.innerHTML = "";
-    correctResponse = document.createElement("div");
-    correctResponse.innerText = "Correct!";
-    correctResponse.setAttribute("class", "answerBar");
-    correctResponse.setAttribute("style", "border-top: lightgray solid 2px");
-    correctResponse.style.backgroundColor = "green";
-    correctResponse.style.color = "black";
-    correctResponse.style.fontWeight = "bold";
-    correctResponse.style.textAlign = "center";
-    answerBarEl.append(correctResponse);
-    setTimeout(function(){
-        correctResponse.innerHTML = "";
-        correctResponse.setAttribute("style", "border-top: none");
-    }, 1000);
-    questionCount++;    
-    renderQuestion();
-}
-
 //Game Over function, crates page with classes and score is the countdown
 function gameOver(){
     gameOverHeader = document.createElement("h4");
@@ -174,11 +174,10 @@ function gameOver(){
     gameOverHeader.style.textAlign = "center";
     gameOverHeader.innerText = "Quiz Completed!!!!";
     gameOverBody = document.createElement("div");
-    gameOverBody.innerText = "Your final score is: " + countDown; 
-    gameOverBody.setAttribute("style", "font-weight: normal");
+    gameOverBody.innerText = "Your final score is: " + countDown;    
     gameOverHeader.append(gameOverBody);
     gameOverForm = document.createElement("form");
-    gameOverForm.setAttribute("style", "padding: 20px");
+    gameOverForm.setAttribute("style", "padding: 10px");
     gameOverFormLabel = document.createElement("label");
     gameOverFormLabel.innerText = "Enter Initials: ";
     gameOverForm.append(gameOverFormLabel);
@@ -187,7 +186,7 @@ function gameOver(){
     gameOverFormInput.setAttribute("type", "text");
     gameOverFormInput.setAttribute("pattern", "[A-Za-z]{3}");
     gameOverFormInput.setAttribute("id", "formInput");
-    gameOverFormInput.setAttribute("placeholder", "Initials Here (Letters ONLY) press ENTER when done");
+    gameOverFormInput.setAttribute("placeholder", "Initials (Letters ONLY) press ENTER when done");
     gameOverForm.append(gameOverFormInput);
     gameOverBody.append(gameOverForm);
     mainContentEl.append(gameOverHeader);
@@ -200,11 +199,11 @@ highScoresPage();
 function highScoresPage(){   
     if (finalScoreEl !== null){
         var combinedScore = JSON.parse(localStorage.getItem("scoreArr"));
-        finalScoreEl.innerHTML = "";
+        finalScoreEl.innerHTML = "";        
         for (i = 0; i < combinedScore.length; i += 2){
             var scoreAppend = document.createElement("div");
             scoreAppend.setAttribute("class", "highScores");
-            scoreAppend.innerText = i / 2 + 1 + ". " + combinedScore[i] + " " + combinedScore[i + 1];       
+            scoreAppend.innerText = combinedScore[i] + " " + combinedScore[i + 1];              
             finalScoreEl.append(scoreAppend);          
         }
     }
@@ -230,7 +229,7 @@ mainContentEl.addEventListener("submit", function(event){
 
 //Clears score Array in local storage when clear scores button is clicked
 if (clearScoresBtn !== null) {
-    clearScoresBtn.addEventListener("click", function (){
+    clearScoresBtn.addEventListener("click", function(){
         localStorage.setItem("scoreArr", JSON.stringify([]));
         highScoresPage();
     });
