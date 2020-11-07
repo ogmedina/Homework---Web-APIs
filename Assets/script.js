@@ -25,11 +25,11 @@ var questionArr = [
         "1: Strings",
         "2. Booleans",
         "3: Alerts",
-        "4:Numbers"],
+        "4: Numbers"],
         correctAnswer: 2,
     },
     {
-        question: "The condition within an if/else statement is enclosed withing ___________.",
+        question: "The condition within an if/else statement is enclosed within ___________.",
         answers: [
         "1. Quotes",
         "2. Curly Brackets",
@@ -113,12 +113,12 @@ function renderQuestion() {
     questionEl.innerText = questionArr[questionCount]["question"];
     mainContentEl.append(questionEl);
     divEl = document.createElement("div");
-    divEl.setAttribute("class", "divEl btn-group-vertical");
+    divEl.setAttribute("class", "btn-group-vertical");      
     for (var i = 0; i < questionArr[questionCount]["answers"].length; i++){
         answersEl = document.createElement("button");        
         answersEl.innerText = questionArr[questionCount]["answers"][i];
-        answersEl.setAttribute("class", "btn-group-vertical quizBtn");
-        answersEl.setAttribute("style", "float: left")              
+        answersEl.setAttribute("class", "btn-group-vertical");
+       // answersEl.style.             
         answersEl.setAttribute("data-index", i);
         divEl.appendChild(answersEl);
         }
@@ -144,10 +144,10 @@ function wrongAnswer(){
         wrongResponse.setAttribute("style", "border-top: none");
     }, 1000);
     countDown -= 10;
-    questionCount++;
-    
+    questionCount++;    
     renderQuestion();    
 }
+
 // Function for right answers and the change of HTML, NO subtraction from time
 function rightAnswer(){
     var correctResponse;
@@ -173,6 +173,7 @@ function rightAnswer(){
 function gameOver(){
     gameOverHeader = document.createElement("h4");
     gameOverHeader.setAttribute("class", "mainContent");
+    gameOverHeader.style.textAlign = "center";
     gameOverHeader.innerText = "Quiz Completed!!!!";
     gameOverBody = document.createElement("div");
     gameOverBody.innerText = "Your final score is: " + countDown; 
@@ -198,7 +199,6 @@ function gameOver(){
 highScoresPage();
 
 //Function for high scores page, puts the high scores that have been saved
-//work out sort function! 
 function highScoresPage(){   
     if (finalScoreEl !== null){
         var combinedScore = JSON.parse(localStorage.getItem("scoreArr"));
@@ -206,17 +206,12 @@ function highScoresPage(){
         for (i = 0; i < combinedScore.length; i += 2){
             var scoreAppend = document.createElement("div");
             scoreAppend.setAttribute("class", "highScores");
-           scoreAppend.innerText = i / 2 + 1 + ". " + combinedScore[i] + " " + combinedScore[i + 1];
-          // myFunction();
-          // function myFunction(){
-           //    combinedScore[i + 1].sort(function(a,b){return a-b});               
-           //};
-           
-           finalScoreEl.append(scoreAppend);
-          // scoreArr.sort((a, b) => b-a);
+            scoreAppend.innerText = i / 2 + 1 + ". " + combinedScore[i] + " " + combinedScore[i + 1];       
+            finalScoreEl.append(scoreAppend);          
         }
     }
 }
+
 //Function that waits for submit by enter button to store new score and then switches to the quizhighscores html
 mainContentEl.addEventListener("submit", function(event){    
     event.preventDefault();    
@@ -227,24 +222,18 @@ mainContentEl.addEventListener("submit", function(event){
             pointsArr = [];
         } else{
             pointsArr = JSON.parse(localStorage.getItem("scoreArr"));
-        }
-        
+        }        
         pointsArr.push(formValue);
-        pointsArr.push(countDown);
-        
+        pointsArr.push(countDown);        
         localStorage.setItem("scoreArr", JSON.stringify(pointsArr));
-        window.location.href = "./quizhighscores.html";
-        
+        window.location.href = "./quizhighscores.html";        
     }
-
 });
 
-//Clears score Array in local storage
+//Clears score Array in local storage when clear scores button is clicked
 if (clearScoresBtn !== null) {
     clearScoresBtn.addEventListener("click", function (){
         localStorage.setItem("scoreArr", JSON.stringify([]));
         highScoresPage();
     });
 }
-
-

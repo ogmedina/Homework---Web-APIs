@@ -20,7 +20,8 @@ This is the fourth assignment for the UTSA Full-Stack Bootcamp. This is a Code Q
 
 Here is a screenshot of the Code Quiz. 
 
-(coming soon!)
+![codequiz1](./Images/codingquizindex.jpg)
+![codequiz2](./Images/codingquizindex2.jpg)
 
 
 ### Deployed Link
