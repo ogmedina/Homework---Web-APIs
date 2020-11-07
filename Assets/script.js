@@ -13,7 +13,6 @@ var gameOverFormLabel;
 var gameOverFormInput;
 var formValue;
 var questionEl;
-var answerEl;
 var countDown = 90;
 var pointsArr = [];
 
@@ -117,8 +116,7 @@ function renderQuestion() {
     for (var i = 0; i < questionArr[questionCount]["answers"].length; i++){
         answersEl = document.createElement("button");        
         answersEl.innerText = questionArr[questionCount]["answers"][i];
-        answersEl.setAttribute("class", "btn-group-vertical");
-       // answersEl.style.             
+        answersEl.setAttribute("class", "btn-group-vertical");                  
         answersEl.setAttribute("data-index", i);
         divEl.appendChild(answersEl);
         }
@@ -188,7 +186,7 @@ function gameOver(){
     gameOverFormInput.setAttribute("class", "form-control");
     gameOverFormInput.setAttribute("type", "text");
     gameOverFormInput.setAttribute("pattern", "[A-Za-z]{3}");
-    gameOverFormInput.setAttribute("id", "formInput"); //capitalize input?
+    gameOverFormInput.setAttribute("id", "formInput");
     gameOverFormInput.setAttribute("placeholder", "Initials Here (Letters ONLY) press ENTER when done");
     gameOverForm.append(gameOverFormInput);
     gameOverBody.append(gameOverForm);
