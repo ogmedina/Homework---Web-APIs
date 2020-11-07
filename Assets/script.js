@@ -69,8 +69,8 @@ var questionArr = [
 if (startBtnEl !== null){
     startBtnEl.addEventListener("click", startQuiz);
 }
-//Timer count down, and start of interval countdown. When the countdown reaches 0 questionCount is set to 5 and the function
-//renderQuestion will send you to the gameOver() function 
+/*Timer count down, and start of interval countdown. When the countdown reaches 0 questionCount is set to 5 and the function
+renderQuestion will send you to the gameOver() function */
 function startQuiz(){
     interval = setInterval(function (){
         countDown--;
