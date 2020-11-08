@@ -19,7 +19,7 @@ var pointsArr = [];
 //Questions Array
 var questionArr = [
     {
-        question: "Commonly used data types do NOT include: ",
+        question: "Commonly used data types DO NOT include: ",
         answers: [
         "1: Strings",
         "2. Booleans",
