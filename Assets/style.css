@@ -37,8 +37,7 @@ a:hover, a:active {
     border: 9px solid;     
 }
 
-#mainContent {
-    /*text-align: center;*/
+#mainContent {    
     font-weight: bold;
     background-color: whitesmoke;
     border: 12px solid;
