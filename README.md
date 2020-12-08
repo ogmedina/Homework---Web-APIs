@@ -1,5 +1,9 @@
 # Homework Web-APIs: Code Quiz
 
+```
+Live Site: https://ogmedina.github.io/Homework---Web-APIs/
+```
+
 ## Full Stack Boot Camp Homework 4 - Code Quiz
 
 ### Description
@@ -16,14 +20,15 @@ This is the fourth assignment for the UTSA Full-Stack Bootcamp. This is a Code Q
 
 * Clean, polished, and responsive user interface
 
+### Technologies Used:
+#### Front-End:
+* HTML
+* CSS
+* JavaScript
+
 ### Screenshots
 
 Here is a screenshot of the Code Quiz. 
 
 ![codequiz1](./Images/codingquizindex.jpg)
 ![codequiz2](./Images/codingquizindex2.jpg)
-
-
-### Deployed Link
-
-Here is a link to the GitHub deployed site: [Code Quiz](https://ogmedina.github.io/Homework---Web-APIs/)
