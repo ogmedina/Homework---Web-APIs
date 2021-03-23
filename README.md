@@ -1,14 +1,7 @@
-# Homework Web-APIs: Code Quiz
+# JavaScript Code Quiz
+![GitHub](https://img.shields.io/github/license/ogmedina/JavaScript-Code-Quiz)
 
-```
-Live Site: https://ogmedina.github.io/Homework---Web-APIs/
-```
-
-## Full Stack Boot Camp Homework 4 - Code Quiz
-
-### Description
-
-This is the fourth assignment for the UTSA Full-Stack Bootcamp. This is a Code Quiz using JavaScript. The following items were the highlights of this assignment:
+This is a code quiz using JavaScript. The following items are the highlights of the repo:
 
 * Timed Coding Quiz
 
@@ -20,15 +13,39 @@ This is the fourth assignment for the UTSA Full-Stack Bootcamp. This is a Code Q
 
 * Clean, polished, and responsive user interface
 
+### Table of Contents
+
+* [Installation](#installation)
+* [Hosted Site](#hosted)
+* [Screenshots](#screenshots)
+* [License](#license)
+* [Technologies Used](#technologies%20used)
+* [Questions](#questions)
+
+### Installation
+Please begin by downloading the files onto your computer. Then open up the index.html file and begin the quiz!
+
+
+### Hosted
+The app is hosted using GitHub at this link: [JavaScript-Code-Quiz](https://ogmedina.github.io/JavaScript-Code-Quiz/)
+```
+Live Site: https://ogmedina.github.io/JavaScript-Code-Quiz/
+```
+
+### Screenshots 
+![codequiz1](./Images/codingquizindex.jpg)
+![codequiz2](./Images/codingquizindex2.jpg)
+
+
+### License
+This project is licensed under the MIT License. 
+
 ### Technologies Used:
-#### Front-End:
+Front End: 
 * HTML
 * CSS
 * JavaScript
+* [Bootstrap](https://getbootstrap.com/)
 
-### Screenshots
-
-Here is a screenshot of the Code Quiz. 
-
-![codequiz1](./Images/codingquizindex.jpg)
-![codequiz2](./Images/codingquizindex2.jpg)
+### Questions
+If you have any questions about the repo, open an issue or contact me directly at ogmdeveloper0@gmail.com. You can find more of my work through my [GitHub Account](https://github.com/ogmedina/).
